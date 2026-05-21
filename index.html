@@ -427,10 +427,8 @@ em.pink { color: var(--pink); font-style: italic; }
 .origin-photo {
   width: 100%; aspect-ratio: 3/4; border-radius: var(--radius-lg);
   overflow: hidden; border: var(--border);
-  background: linear-gradient(135deg, rgba(242,196,196,0.1), var(--surface-solid));
-  display: flex; align-items: center; justify-content: center;
-  font-size: 13px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px;
 }
+.origin-photo img { width: 100%; height: 100%; object-fit: cover; object-position: top center; display: block; }
 .origin-text h2 { font-family: var(--font-h); font-size: 30px; margin-bottom: 20px; line-height: 1.2; }
 .origin-text h2 em { color: var(--pink); font-style: italic; }
 .origin-text p { font-size: 16px; color: var(--text-dim); margin-bottom: 16px; line-height: 1.7; }
@@ -486,6 +484,21 @@ em.pink { color: var(--pink); font-style: italic; }
 .offer-features li { font-size: 14px; color: var(--text-dim); padding: 5px 0; display: flex; align-items: flex-start; gap: 8px; }
 .offer-features li::before { content: '✧'; color: var(--pink); flex-shrink: 0; font-size: 11px; margin-top: 3px; }
 .offer-features li strong { color: var(--text); }
+
+/* Tarot tier rows inside low-ticket card */
+.tarot-tiers { list-style: none; margin-bottom: 20px; position: relative; z-index: 6; }
+.tarot-tier {
+  display: flex; align-items: center; justify-content: space-between;
+  background: rgba(0,0,0,0.12); border: var(--border); border-radius: 10px;
+  padding: 12px 16px; margin-bottom: 8px;
+}
+.tarot-tier:last-child { margin-bottom: 0; }
+.tarot-tier .tier-label { font-size: 14px; color: var(--text-dim); }
+.tarot-tier .tier-label span { display: block; font-size: 11px; color: var(--text-muted); margin-top: 2px; }
+.tarot-tier .tier-price { font-family: var(--font-h); font-size: 20px; color: var(--gold); font-weight: 500; white-space: nowrap; }
+.tarot-tier.video-tier { border-color: rgba(212,175,55,0.25); background: rgba(212,175,55,0.06); }
+.tarot-tier.video-tier .tier-price { font-size: 13px; color: var(--pink); font-family: var(--font-b); }
+
 .offer-card .btn-primary, .offer-card .btn-gold, .offer-card .btn-outline { margin-top: auto; position: relative; z-index: 6; }
 
 .bonus-banner { margin-top: 32px; background: linear-gradient(135deg, rgba(242,196,196,0.1), var(--gold-dim)); border: 1px dashed rgba(242,196,196,0.25); border-radius: var(--radius-md); padding: 24px 32px; text-align: center; }
@@ -637,7 +650,7 @@ em.pink { color: var(--pink); font-style: italic; }
       <div class="cta-panel magical-card">
         <h3>Start With <span style="color:var(--pink)">The Alignment Reading</span></h3>
         <p class="sub">The first step. Sara uses tarot + your natal chart to diagnose your core energetic block — the thing keeping you stuck.</p>
-        <div class="price-row"><span class="price">£XX</span><span class="price-orig">£XXX</span></div>
+        <div class="price-row"><span class="price">$55</span><span class="price-orig">$XX</span></div>
         <p class="price-note">New client pricing · Limited spots per month</p>
         <ul class="cta-checklist">
           <li>45-minute 1:1 diagnostic session</li>
@@ -752,7 +765,10 @@ em.pink { color: var(--pink); font-style: italic; }
 <section class="origin-section">
   <div class="container">
     <div class="origin-grid fade-in">
-      <div class="origin-photo">[Sara's Photo]</div>
+      <!-- TASK 1: Sara's headshot -->
+      <div class="origin-photo">
+        <img src="https://i.postimg.cc/SNYwFr5b/Whats-App-Image-2026-05-06-at-4-58-03-pm.jpg" alt="Sara" />
+      </div>
       <div class="origin-text">
         <div class="section-label">Meet Sara</div>
         <h2 class="shimmer-heading">I Never Planned to Become "The Esoteric Healer."</h2>
@@ -803,17 +819,95 @@ em.pink { color: var(--pink); font-style: italic; }
   </svg>
 </div>
 
-<!-- OFFERS -->
+<!-- ============================================================
+     OFFERS — TASK 2: Reformatted with new products + $ pricing
+     ============================================================ -->
 <section class="offers-section" id="offers">
   <div class="container">
     <div class="fade-in" style="text-align:center;"><div class="section-label">Choose Your Path</div></div>
     <h2 class="fade-in shimmer-heading">Pick The Offering That Matches Where You Are</h2>
     <p class="offers-sub fade-in">Every session includes personalised preparation before we ever speak. This isn't a script. It's bespoke diagnostic work.</p>
+
     <div class="offers-grid fade-in">
-      <div class="offer-card magical-card stagger-child"><div class="icon">🌙</div><h3>The Alignment Reading</h3><div class="tagline">Your First Step · The "Aha Moment"</div><p class="desc">A 45-minute diagnostic combining tarot + your natal chart to find your core energetic block.</p><div class="price-row"><span class="price">£XX</span></div><ul class="offer-features"><li>45-minute 1:1 session via Zoom</li><li>Tarot + natal chart combined</li><li>Written summary of your core block</li><li>Custom ritual prescription</li><li><strong>3 months Skool community access</strong></li></ul><a href="#" class="btn-primary magical-btn">Book Your Reading →</a></div>
-      <div class="offer-card featured magical-card stagger-child"><div class="offer-badge">Most Chosen</div><div class="icon">🌿</div><h3>The Restoration Path</h3><div class="tagline">4 Weeks · Root-Level Healing</div><p class="desc">The full diagnostic-to-healing container. 4 sessions over 4 weeks combining astrological insight, tarot, and a complete holistic health protocol.</p><div class="price-row"><span class="price">£XXX</span></div><ul class="offer-features"><li><strong>4 sessions over 4 weeks</strong></li><li>Deep diagnostic (tarot + full natal chart + health intake)</li><li>Personalised "Restoration Protocol" document</li><li>Nervous system regulation programme</li><li>Cycle-syncing & nutrition guidance</li><li>Voice note support between sessions</li><li><strong>3 months Skool community access</strong></li></ul><a href="#" class="btn-gold magical-btn">Start Your Restoration →</a></div>
-      <div class="offer-card magical-card stagger-child"><div class="icon">🔮</div><h3>The Divine Container</h3><div class="tagline">3 Months · Complete Transformation</div><p class="desc">The premium private mentorship for women ready for a full energetic and physical overhaul.</p><div class="price-row"><span class="price">£XXXX</span></div><ul class="offer-features"><li><strong>6 bi-weekly calls (3 months)</strong></li><li>Daily Voxer voice note support</li><li>Full natal chart decoded across all houses</li><li>Monthly tarot diagnostic check-ins</li><li>Complete holistic health overhaul</li><li>Astrological timing for major life decisions</li><li>Cycle syncing, nervous system, nutrition</li><li><strong>Lifetime Skool community access</strong></li></ul><a href="#" class="btn-primary magical-btn" style="border-color:var(--gold); color:var(--gold);">Apply for The Divine Container →</a></div>
+
+      <!-- LOW TICKET: Tarot Readings -->
+      <div class="offer-card magical-card stagger-child">
+        <div class="icon">🃏</div>
+        <h3>Tarot Readings</h3>
+        <div class="tagline">Your Entry Point · Clarity on Demand</div>
+        <p class="desc">Choose the format that fits where you are right now. Each reading cuts through the noise and gives you a clear, honest picture of what's actually happening beneath the surface.</p>
+
+        <ul class="tarot-tiers">
+          <li class="tarot-tier video-tier">
+            <div class="tier-label">
+              3 Card Reading
+              <span>Recorded video · Delivered to you</span>
+            </div>
+            <div class="tier-price">Video Reading</div>
+          </li>
+          <li class="tarot-tier">
+            <div class="tier-label">
+              5 Card Reading
+              <span>30-minute live session via Zoom</span>
+            </div>
+            <div class="tier-price">$55</div>
+          </li>
+          <li class="tarot-tier">
+            <div class="tier-label">
+              Full 1-Hour Reading
+              <span>Deep dive · Live session via Zoom</span>
+            </div>
+            <div class="tier-price">$70</div>
+          </li>
+        </ul>
+
+        <ul class="offer-features">
+          <li>Honest, specific card interpretations</li>
+          <li>No sugarcoating — clarity you can act on</li>
+          <li><strong>3 months Skool community access</strong></li>
+        </ul>
+        <a href="#" class="btn-primary magical-btn">Book Your Tarot Reading →</a>
+      </div>
+
+      <!-- MID TICKET: Health Audit -->
+      <div class="offer-card featured magical-card stagger-child">
+        <div class="offer-badge">Most Popular</div>
+        <div class="icon">🌿</div>
+        <h3>Health Audit</h3>
+        <div class="tagline">Game-Changing · Your Personal Roadmap</div>
+        <p class="desc">A fully tailored PDF health audit built around your unique body, patterns, and goals — plus ongoing WhatsApp support so you're never left figuring it out alone.</p>
+        <div class="price-row"><span class="price">$136</span></div>
+        <ul class="offer-features">
+          <li><strong>Personalised Health Audit PDF</strong></li>
+          <li>Game-tailored protocol for your specific needs</li>
+          <li>Actionable steps — not generic advice</li>
+          <li><strong>Free bonus included</strong></li>
+          <li><strong>WhatsApp access for follow-up support</strong></li>
+          <li>3 months Skool community access</li>
+        </ul>
+        <a href="#" class="btn-gold magical-btn">Get Your Health Audit →</a>
+      </div>
+
+      <!-- HIGH TICKET: Full Reading Package -->
+      <div class="offer-card magical-card stagger-child">
+        <div class="icon">🔮</div>
+        <h3>The Full Reading</h3>
+        <div class="tagline">High-Touch · Complete Diagnostic</div>
+        <p class="desc">The most comprehensive offering. A discovery call to understand your full picture, followed by a deep 1-hour reading that covers everything — tarot, astrology, health, and your path forward.</p>
+        <div class="price-row"><span class="price">$172</span></div>
+        <ul class="offer-features">
+          <li><strong>15-minute discovery call</strong> to map your situation</li>
+          <li><strong>1-hour deep-dive reading</strong> via Zoom</li>
+          <li>Tarot + natal chart + holistic health combined</li>
+          <li>Specific, personalised action plan</li>
+          <li>Written session summary delivered after</li>
+          <li><strong>3 months Skool community access</strong></li>
+        </ul>
+        <a href="#" class="btn-primary magical-btn" style="border-color:var(--gold); color:var(--gold);">Book The Full Reading →</a>
+      </div>
+
     </div>
+
     <div class="bonus-banner fade-in">
       <div class="tag">Included With Every Offering</div>
       <h4>Free Access to the Blossoming Lotuses Community</h4>
@@ -845,7 +939,7 @@ em.pink { color: var(--pink); font-style: italic; }
       <div class="faq-item"><button class="faq-q">I'm sceptical of astrology and tarot. Will this work for me?</button><div class="faq-a"><div class="faq-a-inner">Good — sceptics are often my best clients. Western Astrology isn't the vague Sun-sign content on Instagram. It's a mathematical system based on precise planetary positions at the moment of your birth. Tarot isn't fortune-telling — it's a mirror for what's already happening beneath the surface.</div></div></div>
       <div class="faq-item"><button class="faq-q">How is this different from seeing a regular therapist or wellness coach?</button><div class="faq-a"><div class="faq-a-inner">Therapy helps you understand your mind. Wellness coaching adjusts your habits. But neither one addresses the energetic and planetary patterns shaping your life beneath the surface. The Root & Rise Method combines all three lenses — psychological, physical, and energetic — so nothing gets missed.</div></div></div>
       <div class="faq-item"><button class="faq-q">Do I need to know my exact birth time?</button><div class="faq-a"><div class="faq-a-inner">For the most accurate natal chart reading, yes — your exact birth time from a birth certificate or hospital records is ideal. If you don't have it, we can still work with your date and location of birth. The tarot diagnostic doesn't require any birth data.</div></div></div>
-      <div class="faq-item"><button class="faq-q">Which offering should I start with?</button><div class="faq-a"><div class="faq-a-inner">If you're new, start with <strong>The Alignment Reading</strong> — it's the diagnostic entry point. If you already know you want deeper transformation, <strong>The Restoration Path</strong> is where most women see the biggest shifts. <strong>The Divine Container</strong> is for women ready to go all-in.</div></div></div>
+      <div class="faq-item"><button class="faq-q">Which offering should I start with?</button><div class="faq-a"><div class="faq-a-inner">If you're new, start with a <strong>Tarot Reading</strong> — the 5 Card Reading is the most popular entry point. If you want a full picture of your health and a personalised plan, the <strong>Health Audit</strong> is where most women see the biggest shift. For the deepest, most comprehensive work, <strong>The Full Reading</strong> covers everything in one powerful session.</div></div></div>
       <div class="faq-item"><button class="faq-q">Is this suitable if I'm going through a crisis right now?</button><div class="faq-a"><div class="faq-a-inner">This work is not a replacement for professional mental health support in an acute crisis. However, if you're in a difficult life transition — a breakup, a career shift, a health challenge — this is exactly the kind of moment where a deep diagnostic can provide the clarity and direction you need.</div></div></div>
     </div>
   </div>
@@ -949,7 +1043,6 @@ document.addEventListener("DOMContentLoaded", () => {
         const scrollY = window.scrollY;
         const maxScroll = document.body.scrollHeight - window.innerHeight;
         const pct = maxScroll > 0 ? scrollY / maxScroll : 0;
-        // Lotus bloom
         if (lotusOuter && lotusInner) {
           lotusOuter.style.transform = `rotate(${pct * 90}deg)`;
           lotusInner.style.transform = `rotate(${pct * -135}deg)`;
@@ -957,9 +1050,7 @@ document.addEventListener("DOMContentLoaded", () => {
           lotusSvg.style.transform = `scale(${1 + pct * 0.35})`;
         }
         if (glowOverlay) glowOverlay.style.opacity = 0.4 + pct * 0.3;
-        // SVG sway
         sways.forEach(svg => { svg.style.transform = `rotate(${Math.sin(scrollY / 500) * 4}deg)`; });
-        // Particle parallax
         scrollParallaxY = scrollY * 0.08;
         ticking = false;
       });
@@ -1046,7 +1137,7 @@ document.addEventListener("DOMContentLoaded", () => {
     { name: "Amira", city: "Chicago" }, { name: "Grace", city: "Denver" },
     { name: "Sophia", city: "Nashville" }, { name: "Lily", city: "Atlanta" }
   ];
-  const actions = ["booked an Alignment Reading", "started the Restoration Path", "joined the Divine Container", "booked a session"];
+  const actions = ["booked a Tarot Reading", "ordered a Health Audit", "booked The Full Reading", "joined the community"];
   const popup = document.getElementById('divine-sync-popup');
   const syncContent = document.getElementById('sync-content');
   function showSync() {
