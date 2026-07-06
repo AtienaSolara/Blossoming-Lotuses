@@ -304,7 +304,7 @@ em.pink { color: var(--pink); font-style: italic; }
 }
 .hero-sub strong { color: var(--text); }
 
-.atf-grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 32px; align-items: start; max-width: 1000px; margin: 0 auto; }
+.atf-grid { display: block; max-width: 800px; margin: 0 auto; }
 
 .vsl-wrapper {
   background: var(--surface-solid); border: var(--border); border-radius: var(--radius-lg);
@@ -436,7 +436,7 @@ em.pink { color: var(--pink); font-style: italic; }
 
 /* TRANSFORMATION */
 .transform-section { padding: 80px 0; }
-.transform-grid { display: grid; grid-template-columns: 1fr auto 1fr; gap: 24px; align-items: start; max-width: 900px; margin: 40px auto 0; }
+.transform-grid { display: grid; grid-template-columns: 1fr auto 1fr; gap: 24px; align-items: stretch; max-width: 900px; margin: 40px auto 0; }
 .transform-col { background: var(--surface-solid); border-radius: var(--radius-md); padding: 32px; border: var(--border); }
 .transform-col.before { border-top: 3px solid var(--rose-deep); --card-glow: rgba(201,107,125,0.1); }
 .transform-col.after { border-top: 3px solid var(--gold); --card-glow: rgba(212,175,55,0.1); }
@@ -647,22 +647,6 @@ em.pink { color: var(--pink); font-style: italic; }
         <div class="vsl-play"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div>
         <span class="vsl-text">Watch: Why most wellness advice fails women over 30</span>
       </div>
-      <div class="cta-panel magical-card">
-        <h3>Start With <span style="color:var(--pink)">The Alignment Reading</span></h3>
-        <p class="sub">The first step. Sara uses tarot + your natal chart to diagnose your core energetic block — the thing keeping you stuck.</p>
-        <div class="price-row"><span class="price">$55</span><span class="price-orig">$XX</span></div>
-        <p class="price-note">New client pricing · Limited spots per month</p>
-        <ul class="cta-checklist">
-          <li>45-minute 1:1 diagnostic session</li>
-          <li>Tarot + natal chart combined analysis</li>
-          <li>Written summary of your core block</li>
-          <li>Custom ritual & practice prescription</li>
-          <li>Community access (3 months free)</li>
-        </ul>
-        <a href="#" class="btn-primary magical-btn">Book Your Alignment Reading →</a>
-        <a href="#offers" class="btn-outline magical-btn">See All Offerings</a>
-        <div class="guarantee-micro"><span style="color:var(--gold);">✧</span> If you don't feel the clarity, you don't pay. Simple.</div>
-      </div>
     </div>
   </div>
 </section>
@@ -804,9 +788,9 @@ em.pink { color: var(--pink); font-style: italic; }
       <h2 class="shimmer-heading" style="font-family:var(--font-h); font-size:clamp(26px,3.5vw,38px);">Don't Take My Word. Take Theirs.</h2>
     </div>
     <div class="proof-cards fade-in">
-      <div class="proof-card magical-card stagger-child"><div class="stars">★★★★★</div><p class="quote">"Sara saw things in my chart that three therapists missed in four years. Within one session I understood why I kept attracting the same type of man — and what to do about it. Life-changing."</p><p class="author">— [Client Name], 38</p><p class="detail">Alignment Reading → Restoration Path</p></div>
-      <div class="proof-card magical-card stagger-child"><div class="stars">★★★★★</div><p class="quote">"I was sceptical. I thought astrology was just horoscopes. But the specificity of what Sara told me about my health, my career patterns, and my family dynamics was uncomfortable in the best way."</p><p class="author">— [Client Name], 44</p><p class="detail">The Alignment Reading</p></div>
-      <div class="proof-card magical-card stagger-child"><div class="stars">★★★★★</div><p class="quote">"The 3-month container completely rewired my relationship with my body. The combination of astrology timing with actual holistic health protocols is what made this different from every other coach."</p><p class="author">— [Client Name], 41</p><p class="detail">The Divine Container</p></div>
+      <div class="proof-card magical-card stagger-child"><div class="stars">★★★★★</div><p class="quote">"Sara saw things in my chart that three therapists missed in four years. Within one session I understood why I kept attracting the same type of man — and what to do about it. Life-changing."</p><p class="author">— Issie, 38</p><p class="detail">Alignment Reading → Restoration Path</p></div>
+      <div class="proof-card magical-card stagger-child"><div class="stars">★★★★★</div><p class="quote">"I was sceptical. I thought astrology was just horoscopes. But the specificity of what Sara told me about my health, my career patterns, and my family dynamics was uncomfortable in the best way."</p><p class="author">— Tilly, 44</p><p class="detail">The Alignment Reading</p></div>
+      <div class="proof-card magical-card stagger-child"><div class="stars">★★★★★</div><p class="quote">"The 3-month container completely rewired my relationship with my body. The combination of astrology timing with actual holistic health protocols is what made this different from every other coach."</p><p class="author">— Lauren, 41</p><p class="detail">The Divine Container</p></div>
     </div>
   </div>
 </section>
@@ -830,43 +814,37 @@ em.pink { color: var(--pink); font-style: italic; }
 
     <div class="offers-grid fade-in">
 
-      <!-- LOW TICKET: Tarot Readings -->
+      <!-- LOW TICKET: Integrative Therapy Sessions -->
       <div class="offer-card magical-card stagger-child">
-        <div class="icon">🃏</div>
-        <h3>Tarot Readings</h3>
-        <div class="tagline">Your Entry Point · Clarity on Demand</div>
-        <p class="desc">Choose the format that fits where you are right now. Each reading cuts through the noise and gives you a clear, honest picture of what's actually happening beneath the surface.</p>
+        <div class="icon">🌱</div>
+        <h3>Integrative Therapy Sessions</h3>
+        <div class="tagline">Deep Conversation · Real Change</div>
+        <p class="desc">A safe, confidential space to unpack what's actually going on beneath the surface. Sara brings her licensed psychology training together with her intuitive understanding of energy and patterns — so you don't just talk about your problems, you actually move through them.</p>
 
         <ul class="tarot-tiers">
-          <li class="tarot-tier video-tier">
-            <div class="tier-label">
-              3 Card Reading
-              <span>Recorded video · Delivered to you</span>
-            </div>
-            <div class="tier-price">Video Reading</div>
-          </li>
           <li class="tarot-tier">
             <div class="tier-label">
-              5 Card Reading
-              <span>30-minute live session via Zoom</span>
-            </div>
-            <div class="tier-price">$55</div>
-          </li>
-          <li class="tarot-tier">
-            <div class="tier-label">
-              Full 1-Hour Reading
-              <span>Deep dive · Live session via Zoom</span>
+              45-Minute Session
+              <span>Focused work · One clear theme</span>
             </div>
             <div class="tier-price">$70</div>
+          </li>
+          <li class="tarot-tier">
+            <div class="tier-label">
+              90-Minute Session
+              <span>Deep dive · Multi-layered work</span>
+            </div>
+            <div class="tier-price">$150</div>
           </li>
         </ul>
 
         <ul class="offer-features">
-          <li>Honest, specific card interpretations</li>
-          <li>No sugarcoating — clarity you can act on</li>
+          <li>Confidential 1:1 space via secure video</li>
+          <li>Held by a licensed psychologist (Paraguay)</li>
+          <li>Blends therapeutic depth with intuitive insight</li>
           <li><strong>3 months Skool community access</strong></li>
         </ul>
-        <a href="#" class="btn-primary magical-btn">Book Your Tarot Reading →</a>
+        <a href="#" class="btn-primary magical-btn">Book a Session →</a>
       </div>
 
       <!-- MID TICKET: Health Audit -->
